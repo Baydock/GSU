@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Version>1.0.0</Version>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;C:\Users\xande\Games\steam\steamapps\common\BloonsTD6\Mods&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <None Remove="Resources\AssetBundles\gsu" />
+    <None Remove="Resources\Portraits\0.png" />
+    <None Remove="Resources\Portraits\1.png" />
+    <None Remove="Resources\Portraits\2.png" />
+    <None Remove="Resources\Portraits\3.png" />
+    <None Remove="Resources\Textures\ballisticsentry.png" />
+    <None Remove="Resources\UpgradeIcons\1.png" />
+    <None Remove="Resources\UpgradeIcons\2.png" />
+    <None Remove="Resources\UpgradeIcons\3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AssetBundles\gsu" />
+    <EmbeddedResource Include="Resources\Portraits\0.png" />
+    <EmbeddedResource Include="Resources\Portraits\1.png" />
+    <EmbeddedResource Include="Resources\Portraits\2.png" />
+    <EmbeddedResource Include="Resources\Portraits\3.png" />
+    <EmbeddedResource Include="Resources\Portraits\sentry.png" />
+    <EmbeddedResource Include="Resources\Textures\ballisticsentry.png" />
+    <EmbeddedResource Include="Resources\UpgradeIcons\1.png" />
+    <EmbeddedResource Include="Resources\UpgradeIcons\2.png" />
+    <EmbeddedResource Include="Resources\UpgradeIcons\3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppNinjaKiwi.Common">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppNinjaKiwi.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppNinjaKiwi.LiNK.Aot">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppNinjaKiwi.LiNK.Aot.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
